@@ -1,6 +1,6 @@
 // DEPENDENCIES
 const express = require("express");
-
+const routes = require("./routes/index.js");
 // DATA
 
 // APP / PORT
@@ -14,6 +14,8 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static("public"));
 // ROUTES
+app.use(routes);
+
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
